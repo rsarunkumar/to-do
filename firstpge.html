@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="firstpage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body id="bdy" >
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <div class="profile">
+            <img src="prf.png" alt="Profile">
+            <h3>User Name</h3>
+        </div>
+
+        <nav class="nav-menu">
+            <a onclick="hideSidebar()">Dashboard</a>
+            <a onclick="showtask()">Completed Task</a>
+        </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main>
+        <header>
+            <h2 id="h2tag">Welcome, User Name 👋</h2>
+            <button class="menu-btn"  onclick="toggleSidebar(event)">☰</button>
+
+        </header>
+ 
+        <div class="grid">
+    <section class="card todo">
+        <button class="add-btn" onclick="toggleForm()">Add Task +</button>
+
+        <div class="task-form" id="taskForm">
+            <input type="text" id="taskName" placeholder="Task name">
+            <textarea id="taskDesc" placeholder="Task description"></textarea>
+            <button onclick="addTask()">Save Task</button>
+        </div>
+
+        <div class="task-list" id="taskList"></div>
+
+        <h3 class="completed-title">Completed Tasks</h3>
+        <div class="task-list completed-list" id="completedList"></div>
+    </section>
+</div>
+    </main>
+
+</div>
+
+<script src="firstpage.js"></script>
+</body>
+</html>

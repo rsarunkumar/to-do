@@ -1,0 +1,377 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #ffffff;
+}
+
+/* APP LAYOUT */
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 300px;
+    padding: 20px;
+    background: linear-gradient(#ff6b6b, black);
+    border-radius: 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar.show {
+    display: block;
+}
+
+
+
+.profile {
+    text-align: center;
+}
+
+.profile img {
+    width: 70px;
+    border-radius: 50%;
+}
+
+.profile h3 {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* NAVIGATION */
+.nav-menu {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar nav a {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    margin: 8px 0;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.3s ease, padding-left 0.3s ease;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    background: rgba(255, 100, 100, 0.4);
+    padding-left: 24px;
+}
+
+/* MAIN */
+main {
+    flex: 1;
+    padding: 50px;
+    width: 100%;
+}
+
+
+/*header h2 tag*/
+#h2tag {
+    display: flex;
+    justify-content: center;
+}
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: 2fr;
+    margin-top: 10px;
+}
+
+/* CARDS */
+.card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* TODO */
+.todo {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-btn {
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(#ff6b6b, #ff6b6b);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    box-shadow: #ff5050 0px 4px 15px;
+}
+
+/* TASK FORM */
+.task-form {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+
+    transition: all 0.3s ease;
+}
+
+.task-form.show {
+    max-height: 300px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.task-form input,
+.task-form textarea {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.task-form button {
+    font-size: 20px;
+
+    border-radius: 20px;
+    border: none;
+    background: linear-gradient(#ff6b6b, #ff6b6b);
+    color: #ffffff;
+    cursor: pointer;
+    height: 40px;
+}
+
+.task-form button:hover {
+    box-shadow: #000000 0px 0px 15px;
+}
+
+/* TASK LIST */
+.task-list {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 10000px) {
+
+    .app {
+        flex-direction: row;
+        /* keep layout */
+    }
+
+    .sidebar {
+        position: fixed;
+        height: 100vh;
+        width: 220px;
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.5s ease;
+        margin: 0;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+
+    .sidebar.hide {
+        transform: translate(100%);
+    }
+}
+
+.menu-btn {
+    position: fixed;          /* stick to screen */
+    top: 70px;
+    right: 20px;              /* always stay 20px from right */
+    display: flex;
+    flex-direction: column;
+    font-size: 38px;
+    padding: 18px 24px;
+    width: 70px;
+    height: 70px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .menu-btn {
+        width: 55px;
+        height: 55px;
+        font-size: 30px;
+        top: 20px;
+        right: 15px;
+    }
+}
+
+
+.edit-input {
+    width: 50%;
+    font-size: 1rem;
+    padding: 4px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.edit-profile-name {
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 600;
+    box-sizing: border-box;
+}
+
+.task-action-panel {
+    position: fixed;
+    right: 20px;
+    /* right edge */
+    top: 120px;
+    /* from top */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* space between buttons */
+    z-index: 1000;
+}
+
+/* align action buttons to right side inside each task */
+action{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* Edit button */
+edit{
+    background: linear-gradient(#e8ec00,#5c5e01f6);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: #fbff00 0px 0px 15px;
+}
+
+.task .edit { /* Added .task and . dots */
+    background: linear-gradient(#e8ec00, #5c5e01f6);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: #fbff00 0px 0px 15px;
+}
+
+.task .edit:hover {
+    border-radius: 30px;
+    transition: 0.2s ease-in-out;
+    box-shadow: #757700 0px 2px 15px;    
+}
+
+/* Delete button */
+.task .delete{
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: #ff0000 0px 0px 10px;
+}
+.task .delete:hover {
+    border-radius: 30px;
+    transition: 0.2s ease-in-out;
+    box-shadow: #0000007c 0px 2px 15px;
+}
+
+/* Styling for the new task layout */
+.task-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.task-checkbox {
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+/* Strike-through effect for completed tasks */
+.completed h4, 
+.completed p {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* Ensure the task card spaces things correctly */
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.completed-title {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px dashed #eee;
+    color: #888;
+    font-size: 1.1rem;
+}
+
+.completed-list .task {
+    opacity: 0.7;
+    background-color: #f9f9f9;
+}
+
+.completed-text {
+    text-decoration: line-through;
+    color: #888;
+}
+
+/* Ensure layout stays clean */
+.task-content {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Ensure buttons are removed from layout space when hidden */
+.task .action { /* Added .task and . dots */
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
