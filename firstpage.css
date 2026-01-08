@@ -85,6 +85,7 @@ main {
 
 /*header h2 tag*/
 #h2tag {
+    margin-left:20%;
     display: flex;
     justify-content: center;
 }
@@ -92,7 +93,7 @@ main {
 .grid {
     display: grid;
     grid-template-columns: 2fr;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 /* CARDS */
@@ -125,7 +126,7 @@ main {
 
 /* TASK FORM */
 .task-form {
-    margin-top: 15px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -204,23 +205,20 @@ main {
 }
 
 .menu-btn {
-    position: fixed;          /* stick to screen */
-    top: 70px;
-    right: 20px;              /* always stay 20px from right */
-    display: flex;
-    flex-direction: column;
     font-size: 38px;
-    padding: 18px 24px;
     width: 70px;
     height: 70px;
     border: none;
     background: none;
     cursor: pointer;
-    z-index: 1000;
 }
 
-
-
+.page-header {
+    display: flex;
+    align-items: center;      /* vertical alignment */
+    justify-content: space-between;
+    padding: 20px;
+}
 
 @media (max-width: 768px) {
     .menu-btn {
@@ -269,7 +267,7 @@ action{
 }
 
 /* Edit button */
-edit{
+.edit{
     background: linear-gradient(#e8ec00,#5c5e01f6);
     color: white;
     border: none;
@@ -293,7 +291,7 @@ edit{
 
 .task .edit:hover {
     border-radius: 30px;
-    transition: 0.2s ease-in-out;
+    transition: 0.5s ease-in-out;
     box-shadow: #757700 0px 2px 15px;    
 }
 
