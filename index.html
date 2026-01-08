@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>RS To-Do</title>
+    <title>Dashboard</title>
 
     <link rel="stylesheet" href="firstpage.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -22,13 +22,12 @@
 
         <nav class="nav-menu">
             <a onclick="hideSidebar()">Dashboard</a>
-            <a onclick="showtask()">Completed Task</a>
         </nav>
     </aside>
 
     <!-- MAIN -->
     <main>
-        <header>
+        <header class="page-header">
             <h2 id="h2tag">Welcome, User Name 👋</h2>
             <button class="menu-btn"  onclick="toggleSidebar(event)">☰</button>
 
@@ -57,4 +56,3 @@
 <script src="firstpage.js"></script>
 </body>
 </html>
-
